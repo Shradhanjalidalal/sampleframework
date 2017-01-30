@@ -1,0 +1,4 @@
+2017-01-30 18:03:53,442 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.ty:framework:0.0.1-SNAPSHOT @ D:\Ibrahim\Project\framework\pom.xml.
+2017-01-30 18:03:57,925 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /framework/src/main/java
+2017-01-30 18:03:57,928 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /framework/src/test/java
+2017-01-30 18:03:58,634 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 10 sec
