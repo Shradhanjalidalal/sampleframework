@@ -26,7 +26,7 @@ public class Listener implements ITestListener
 
 	}
 
-   public void onTestFailure(ITestResult result) 
+   public void onTestFailure14561456142056145610(ITestResult result) 
    {
 	   EventFiringWebDriver wd=new EventFiringWebDriver(driver);
 	   File srcimg=wd.getScreenshotAs(OutputType.FILE);
