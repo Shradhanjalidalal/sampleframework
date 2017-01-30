@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29988" started-at="2017-01-30T07:55:02Z" finished-at="2017-01-30T07:55:32Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29988" started-at="2017-01-30T07:55:02Z" finished-at="2017-01-30T07:55:32Z">
+      <class name="com.Script.Login">
+        <test-method status="PASS" signature="getbrowser()[pri:0, instance:com.Script.Login@6d4b1c02]" name="getbrowser" is-config="true" duration-ms="7855" started-at="2017-01-30T13:25:02Z" finished-at="2017-01-30T13:25:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getbrowser -->
+        <test-method status="PASS" signature="testlogin()[pri:0, instance:com.Script.Login@6d4b1c02]" name="testlogin" duration-ms="22109" started-at="2017-01-30T13:25:10Z" finished-at="2017-01-30T13:25:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testlogin -->
+      </class> <!-- com.Script.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
