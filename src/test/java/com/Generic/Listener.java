@@ -2,19 +2,25 @@ package com.Generic;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.DataFormat;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 public class Listener implements ITestListener
 {
-	WebDriver driver;
+//	String path=System.getProperty("user.dir");
 
-	public void onTestStartklljkl14145614561(ITestResult result)
+	public void onTestStart(ITestResult result)
 	{
 	
 
@@ -26,21 +32,30 @@ public class Listener implements ITestListener
 
 	}
 
-   public void onTestFailure14561456142056145610(ITestResult result) 
+   public void onTestFailure(ITestResult result) 
    {
-	   EventFiringWebDriver wd=new EventFiringWebDriver(driver);
-	   File srcimg=wd.getScreenshotAs(OutputType.FILE);
-	   File dstFile=new File("C:\\liqvidautomation\\framework\\screenshots.png");
-	 try 
-	 {
-	  FileUtils.copyFile(srcimg, dstFile);
-	 } 
-	 catch (IOException e)
-	 {
-	  e.printStackTrace();
-	 }
-    }
-   public void onTestSkipped(ITestResult result) 
+	// To get Failed method name
+		String failMethName=result.getMethod().getMethodName();
+	// To get Date 
+	   Date dNow = new Date( );
+	   SimpleDateFormat ft = new SimpleDateFormat ("dd-MM-yyyy_hh:mm:ss");
+       String d = "Current Date: " + ft.format(dNow);
+       System.out.println(d);
+       Date date = new Date();
+   	   SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy_hh-mm-ss");
+   	   String sdate = sdf.format(date);
+       File imgFile = ((TakesScreenshot)BrowserLaunch.driver).getScreenshotAs(OutputType.FILE);
+   	try {
+//   	System.out.println(path);
+   		FileUtils.copyFile(imgFile, new File(System.getProperty("user.dir")+"\\screenshots\\"+failMethName+"_"+sdate+"_test.png"));
+   	    } 
+   	catch (IOException e) 
+   	{
+   	  e.printStackTrace();
+   	}
+   }
+  
+public void onTestSkipped(ITestResult result) 
    {
    }
    public void onTestFailedButWithinSuccessPercentage(ITestResult result) 
@@ -52,5 +67,7 @@ public class Listener implements ITestListener
    public void onFinish(ITestContext context)
    {
    }
+
+
 }
 
